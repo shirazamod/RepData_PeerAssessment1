@@ -1,18 +1,11 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document: yes
+    keep_md: yes
+---
 
 
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
 
 
 ## Loading and preprocessing the data
@@ -39,7 +32,7 @@ qplot(total.steps, data=daily.steps, geom="histogram") + labs(title = "Histogram
 ## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 ```
 
-![](PA1_template_files/figure-html/Histogram_of_total_steps_per_day-1.png) 
+![plot of chunk Histogram_of_total_steps_per_day](figure/Histogram_of_total_steps_per_day-1.png) 
 
 
 ```r
@@ -68,7 +61,7 @@ interval.activity <- summarise(by.interval, mean.steps = mean(steps, na.rm=TRUE)
 qplot(interval, mean.steps, data=interval.activity, geom="line") + labs(title = "Time series of the average steps taken in each 5 minute interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 ### Which interval has the most activity?
 
@@ -118,7 +111,7 @@ qplot(total.steps, data=daily.steps, geom="histogram") + labs(title = "Histogram
 ## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 Mean steps
 
@@ -160,4 +153,4 @@ wday.int.activity <- summarise(by.day.interval, mean.steps = mean(steps, na.rm=T
 qplot(interval, mean.steps, data=wday.int.activity, geom="line", facets = day ~ .) + labs(title = "Time series of the average steps taken in each 5 minute interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
